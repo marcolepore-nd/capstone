@@ -1,0 +1,17 @@
+.nav_container {
+    width: 100%;
+
+    .nav_list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav_item {
+            display: flex;
+            font-size: 20px;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+    }
+}

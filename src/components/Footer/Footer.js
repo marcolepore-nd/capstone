@@ -1,45 +1,49 @@
 import React from 'react';
+import Centerer from 'components/Centerer/Centerer';
 import { navPages, contacts, socialMedia } from 'variables/variables';
-import footerImg from "assets/restauranfood.jpg";
+import './Footer.scss';
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className='footer'>
-      <img src={footerImg} alt="Restaurant Food" />
-      <div>
-        Doormat Navigation
-        <ul>
-          {navPages.map((item, index) => (
-            <li key={index}>
-              <a href={item.path}>
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        Contacts
-        <ul>
-          {contacts.map((item, index) => (
-            <li key={index}>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        Social Media
-        <ul>
-          {socialMedia.map((item, index) => (
-            <li key={index}>
-              <a href={item.path}>
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <footer className='footer_container'>
+      <Centerer>
+        <div className='footer_content'>
+          <div className='footer_column'>
+            <h5 className='footer_columnTitle'>Navigation</h5>
+            <ul className='footer_columnItems'>
+              {navPages.map((item, index) => (
+                <li key={index}>
+                  <a href={item.path}>
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='footer_column'>
+            <h5 className='footer_columnTitle'>Contacts</h5>
+            <ul className='footer_columnItems'>
+              {contacts.map((item, index) => (
+                <li key={index}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='footer_column'>
+            <h5 className='footer_columnTitle'>Social Media</h5>
+            <ul className='footer_columnItems'>
+              {socialMedia.map((item, index) => (
+                <li key={index}>
+                  <a href={item.path}>
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Centerer>
     </footer>
   );
 }

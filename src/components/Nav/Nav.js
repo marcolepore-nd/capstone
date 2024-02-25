@@ -1,12 +1,13 @@
 import React from 'react';
 import { navPages } from 'variables/variables';
+import './Nav.scss';
 
 function Nav() {
   return (
-    <nav>
-      <ul>
+    <nav className='nav_container'>
+      <ul className='nav_list'>
         {navPages.map((page, index) => (
-          <li key={index}>
+          <li className='nav_item' key={index}>
             <a href={page.path}>
               {page.name}
             </a>

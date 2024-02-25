@@ -1,0 +1,27 @@
+@import 'variables/variables';
+
+
+.footer_container {
+    background-color: $primary-color;
+
+    .footer_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin: 40px 0;
+
+        .footer_columnTitle {
+            color: $secondary-color;
+            margin-bottom: 10px;
+        }
+
+        .footer_columnItems {
+            * {
+                color: $white;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+    }
+}

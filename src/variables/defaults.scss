@@ -1,9 +1,4 @@
-$primary_color: #495e57;
-$secondary_color: #F4CE14;
-$black: #000000;
-$white: #ffffff;
-$icon_color: #48742c;
-
+@import './variables';
 
 * {
     margin: 0;
@@ -42,10 +37,11 @@ h5 { // Section category
     font-weight: 600;
 }
 
-p { // Paragraph
+p, li { // Paragraph
     font-size: 16px;
     font-weight: 200;
-    color: $primary_color;
+    color: $primary-color;
+    list-style: none;
 
     & strong { // Bold
         font-weight: 600;
