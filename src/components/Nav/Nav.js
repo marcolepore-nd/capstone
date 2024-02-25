@@ -1,5 +1,5 @@
 import React from 'react';
-import { navPages } from '../variables/variables';
+import { navPages } from 'variables/variables';
 
 function Nav() {
   return (

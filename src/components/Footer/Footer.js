@@ -1,6 +1,6 @@
 import React from 'react';
-import { navPages, contacts, socialMedia } from '../variables/variables';
-import footerImg from "../assets/restauranfood.jpg";
+import { navPages, contacts, socialMedia } from 'variables/variables';
+import footerImg from "assets/restauranfood.jpg";
 
 function Footer() {
   return (

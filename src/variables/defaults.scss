@@ -1,0 +1,59 @@
+$primary_color: #495e57;
+$secondary_color: #F4CE14;
+$black: #000000;
+$white: #ffffff;
+$icon_color: #48742c;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.2;
+    color: $black;
+}
+
+h1 { // Display Title
+    font-size: 46px;
+    font-weight: 400;
+    font-family: serif;
+}
+
+h2 { // Sub title
+    font-size: 40px;
+    font-weight: 200;
+    font-family: serif;
+}
+
+h3 { // Section Title
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h4 { // Card Title
+    font-size: 18px;
+    font-weight: 400;
+}
+
+h5 { // Section category
+    font-size: 16px;
+    font-weight: 600;
+}
+
+p { // Paragraph
+    font-size: 16px;
+    font-weight: 200;
+    color: $primary_color;
+
+    & strong { // Bold
+        font-weight: 600;
+    }
+}
+
+a { // CTA
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+}
