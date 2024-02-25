@@ -1,14 +1,19 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from 'Routes/Homepage';
+import Booking from 'Routes/Booking';
 import './App.css';
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
 import 'variables/defaults.scss';
 
 function App() {
   return (
     <>
-      <Header/>
-      <main></main>
-      <Footer/>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path="/booking" element={<Booking />} />
+        </Routes>
+      </Router>
     </>
   );
 }
