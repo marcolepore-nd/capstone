@@ -16,7 +16,7 @@ h1 { // Display Title
 }
 
 h2 { // Sub title
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 200;
     font-family: serif;
 }
@@ -39,7 +39,7 @@ h5 { // Section category
 
 p, li { // Paragraph
     font-size: 16px;
-    font-weight: 200;
+    font-weight: 400;
     color: $primary-color;
     list-style: none;
 
@@ -52,4 +52,8 @@ a { // CTA
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
+    color: $icon-color;
+	&:hover {
+		text-decoration: underline;
+	}
 }

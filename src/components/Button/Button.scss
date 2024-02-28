@@ -1,0 +1,33 @@
+@import 'variables/variables';
+
+.button {
+    background-color: $primary-color;
+    color: $white;
+
+    height: 50px;
+    min-width: 180px;
+    padding: 0 30px;
+
+    border: none;
+    border-style: none;
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:active {
+        background-color: $primary-color-dark;
+    }
+
+    &.secondary {
+        background-color: $secondary-color;
+        color: $primary-color;
+
+        &:active {
+            background-color: $secondary-color-dark;
+        }
+    }
+}

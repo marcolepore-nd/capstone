@@ -3,13 +3,13 @@
 
 .footer_container {
     background-color: $primary-color;
+    padding: 30px 0;
 
     .footer_content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        margin: 40px 0;
 
         .footer_columnTitle {
             color: $secondary-color;
