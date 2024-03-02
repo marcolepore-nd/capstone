@@ -1,41 +1,48 @@
 import React, { useReducer } from "react";
+import { fetchAPI, submitAPI } from "api/bookingAPI";
 
 const initializeTimes = () => {
-	return [
-		"17:00",
-		"18:00",
-		"19:00",
-		"20:00",
-		"21:00",
-		"22:00",
-	];
+	let currentDate = new Date().toISOString().substr(0, 10);
+	let availableTimes = fetchAPI(currentDate);
+	return {
+		availableTimes: availableTimes,
+		submitted: false,
+	};
 };
 
-const timesReducer = (state, action) => {
+const reducer = (state, action) => {
 	switch (action.type) {
 		case "UPDATE_TIMES":
-			return action.payload;
+			state.availableTimes = action.payload;
+			return state;
+		case "SUBMITTED":
+			state.submitteed = action.payload;
+			return state;
 		default:
 			return state;
 	}
 };
 
 const Main = ({ children, ...props }) => {
-	const [availableTimes, dispatch] = useReducer(timesReducer, initializeTimes());
+	const [state, dispatch] = useReducer(reducer, initializeTimes());
 
 	const updateTimes = (selectedDate) => {
-		// Logic to update availableTimes based on selectedDate
-		// For now, returning the same availableTimes regardless of the date
-		dispatch({ type: "UPDATE_TIMES", payload: availableTimes });
+		let newAvailableTimes = fetchAPI(selectedDate);
+		dispatch({ type: "UPDATE_TIMES", payload: newAvailableTimes });
 	};
+
+	const submitForm = (formData) => {
+		let result = submitAPI(formData);
+		dispatch({ type: "SUBMITTED", payload: result });
+	}
 
 	return (
 		<main>
 			{React.Children.map(children, (child) =>
 				React.cloneElement(child, {
-					availableTimes: availableTimes,
-					setAvailableTimes: dispatch,
+					availableTimes: state.availableTimes,
 					updateTimes: updateTimes,
+					submitForm: submitForm,
 					...props,
 				})
 			)}
