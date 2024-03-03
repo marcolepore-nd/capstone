@@ -7,11 +7,11 @@ const SpecialsTile = ({ title, text, price, image }) => {
       <img src={image} alt={title} className="specialsTile_image" />
       <div className='specialsTile_content'>
         <div className='specialsTile_title'>
-					<h4>{title}</h4>
-					<p className="specialsTile_price">{price}</p>
+          <h4>{title}</h4>
+          <p className="specialsTile_price">{price}</p>
         </div>
         <p className="specialsTile_text">{text}</p>
-				<a href="#" className="specialsTile_link">Order a delivery</a>
+        <a href="#" className="specialsTile_link" aria-label="Order a delivery">Order a delivery</a>
       </div>
     </div>
   );

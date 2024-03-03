@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Centerer from "components/Centerer/Centerer";
+import Button from "components/Button/Button";
+import "./BookingForm.scss";
 
 const BookingForm = (props) => {
   let currentDate = new Date().toISOString().substr(0, 10);
@@ -6,10 +9,14 @@ const BookingForm = (props) => {
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+  const [valid, setValid] = useState(false);
 
   const handleDateChange = (e) => {
-    setDate(e.target.value);
-    props.updateTimes(e.target.value);
+    const selectedDate = e.target.value;
+    const newDate = selectedDate < currentDate ? currentDate : selectedDate;
+    setDate(newDate);
+    setTime("");
+    props.updateTimes(newDate);
   };
 
   const handleTimeChange = (e) => {
@@ -25,77 +32,91 @@ const BookingForm = (props) => {
   };
 
   const handleSubmit = (e) => {
+		console.log('submittone')
     e.preventDefault();
-		let formData = {
-			date,
-			time,
-			guests,
-			occasion,
-		};
-		props.submitForm(formData);
+    let formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+    props.submitForm(formData);
   };
 
+  useEffect(() => {
+    if (date && time && guests && occasion) {
+      setValid(true);
+    } else {
+      setValid(false);
+    }
+  }, [date, time, guests, occasion]);
+
   return (
-    <form
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-      onSubmit={handleSubmit}
-    >
-      {/* DATE INPUT */}
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        value={date}
-        onChange={handleDateChange}
-        aria-label="Choose date"
-      />
+    <Centerer column>
+      <form className="bookingForm_form" onSubmit={handleSubmit}>
+        {console.log("props", props)}
+        {/* DATE INPUT */}
+        <label htmlFor="res-date">Choose date</label>
+        <input
+          type="date"
+          id="res-date"
+          value={date}
+          onChange={handleDateChange}
+          min={currentDate}
+          aria-label="Choose date"
+        />
 
-      {/* TIME INPUT */}
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        value={time}
-        onChange={handleTimeChange}
-        aria-label="Choose time"
-      >
-        {props.availableTimes?.map((timeOption) => (
-          <option key={timeOption}>{timeOption}</option>
-        ))}
-      </select>
+        {/* TIME INPUT */}
+        <label htmlFor="res-time">Choose time</label>
+        <select
+          id="res-time"
+          type="select"
+          value={time}
+          onChange={handleTimeChange}
+          aria-label="Choose time"
+        >
+					<option value="">Select a time</option>
+          {props.availableTimes?.map((timeOption) => (
+            <option key={timeOption}>{timeOption}</option>
+          ))}
+        </select>
 
-      {/* GUESTS INPUT */}
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        placeholder="1"
-        min="1"
-        max="10"
-        id="guests"
-        value={guests}
-        onChange={handleGuestsChange}
-        aria-label="Number of guests"
-      />
+        {/* GUESTS INPUT */}
+        <label htmlFor="guests">Number of guests</label>
+        <input
+          type="number"
+          placeholder="1"
+          min="1"
+          max="10"
+          id="guests"
+          value={guests}
+          onChange={handleGuestsChange}
+          aria-label="Number of guests"
+        />
 
-      {/* OCCASION INPUT */}
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        value={occasion}
-        onChange={handleOccasionChange}
-        aria-label="Occasion"
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-        <option>Other</option>
-      </select>
+        {/* OCCASION INPUT */}
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          type="select"
+          value={occasion}
+          onChange={handleOccasionChange}
+          aria-label="Occasion"
+        >
+          <option>Birthday</option>
+          <option>Anniversary</option>
+          <option>Other</option>
+        </select>
 
-      {/* SUBMIT BUTTON */}
-      <input
-        type="submit"
-        value="Make Your reservation"
-        aria-label="Make Your reservation"
-      />
-    </form>
+        {/* SUBMIT BUTTON */}
+        <Button
+          type="submit"
+          label="Make your reservation"
+          aria-label="Make your reservation"
+          disabled={!valid}
+        />
+      </form>
+    </Centerer>
   );
 };
 

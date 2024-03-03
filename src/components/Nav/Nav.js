@@ -8,7 +8,7 @@ function Nav() {
       <ul className='nav_list'>
         {navPages.map((page, index) => (
           <li className='nav_item' key={index}>
-            <a href={page.path}>
+            <a href={page.path} aria-label={page.name}>
               {page.name}
             </a>
           </li>

@@ -1,7 +1,9 @@
 $primary-color: #495e57;
 $primary-color-dark: darken($primary-color, 10%);
+$primary-color-darker: darken($primary-color, 20%);
 $secondary-color: #F4CE14;
-$secondary-color-dark: darken($secondary-color, 10%);
+$secondary-color-light: lighten($secondary-color, 10%);
+$secondary-color-lighter: lighten($secondary-color, 20%);
 $black: #000000;
 $white: #ffffff;
 $icon-color: #48742c;

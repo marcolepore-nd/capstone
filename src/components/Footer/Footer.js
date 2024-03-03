@@ -13,7 +13,7 @@ const Footer = () => {
             <ul className='footer_columnItems'>
               {navPages.map((item, index) => (
                 <li key={index}>
-                  <a href={item.path}>
+                  <a href={item.path} aria-label={item.name}>
                     {item.name}
                   </a>
                 </li>
@@ -25,7 +25,7 @@ const Footer = () => {
             <ul className='footer_columnItems'>
               {contacts.map((item, index) => (
                 <li key={index}>
-                  {item}
+                  <span aria-label={item}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -35,7 +35,7 @@ const Footer = () => {
             <ul className='footer_columnItems'>
               {socialMedia.map((item, index) => (
                 <li key={index}>
-                  <a href={item.path}>
+                  <a href={item.path} aria-label={item.name}>
                     {item.name}
                   </a>
                 </li>

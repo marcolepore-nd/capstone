@@ -1,6 +1,6 @@
 @import 'variables/variables';
 
-.button {
+button {
     background-color: $primary-color;
     color: $white;
 
@@ -18,16 +18,28 @@
 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
-    &:active {
+    &:hover {
         background-color: $primary-color-dark;
+    }
+
+    &:active {
+        background-color: $primary-color-darker;
     }
 
     &.secondary {
         background-color: $secondary-color;
         color: $primary-color;
 
-        &:active {
-            background-color: $secondary-color-dark;
+        &:hover {
+            background-color: $secondary-color-light;
         }
+
+        &:active {
+            background-color: $secondary-color-lighter;
+        }
+    }
+
+    &:disabled {
+        opacity: 75%;
     }
 }
