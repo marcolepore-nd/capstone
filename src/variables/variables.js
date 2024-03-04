@@ -16,5 +16,3 @@ export const socialMedia = [
     { name: 'Instagram', path: 'https://www.instagram.com' },
     { name: 'Twitter', path: 'https://www.twitter.com' },
 ]
-
-export const isMobile = window.innerWidth <= 768

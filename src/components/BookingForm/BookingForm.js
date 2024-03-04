@@ -32,7 +32,6 @@ const BookingForm = (props) => {
 	};
 
 	const handleSubmit = (e) => {
-		console.log("submittone");
 		e.preventDefault();
 		let formData = {
 			date,
