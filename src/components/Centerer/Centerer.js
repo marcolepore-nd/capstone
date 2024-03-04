@@ -10,7 +10,7 @@ const Centerer = (props) => {
         } else if (!!props.column) {
             className += ' column';
         }
-        return className;
+        return `${className} ${props.className ? props.className : ''}`;
     }
 
     return (

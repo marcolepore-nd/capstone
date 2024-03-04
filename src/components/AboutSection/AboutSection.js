@@ -6,7 +6,7 @@ import "./AboutSection.scss";
 
 const AboutSection = () => {
 	return (
-		<section className="aboutSection_container">
+		<section className="aboutSection_container" id='about'>
 			<Centerer>
 				<div className="aboutSection_content">
 					<h3>About</h3>
@@ -28,10 +28,10 @@ const AboutSection = () => {
 						</div>
 						<div className="aboutSection_images">
 							<div className="aboutSection_imageContainer">
-								<img src={img1} alt="Restaurant Image" aria-label="Restaurant Food" />
+								<img src={img1} alt="Restaurant food" aria-label="Restaurant Food" />
 							</div>
 							<div className="aboutSection_imageContainer">
-								<img src={img2} alt="Restaurant Image" aria-label="Restaurant" />
+								<img src={img2} alt="Restaurant" aria-label="Restaurant" />
 							</div>
 						</div>
 					</div>

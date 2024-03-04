@@ -14,7 +14,7 @@ test('renders BookingForm component with submit button', () => {
   const submitButtonElement = screen.getByRole('button', { type: 'submit' });
   expect(submitButtonElement).toBeInTheDocument();
   expect(submitButtonElement).toHaveAttribute('type', 'submit');
-  expect(submitButtonElement).toHaveAttribute('aria-label', 'Make your reservation');
+  expect(submitButtonElement).toHaveAttribute('aria-label', 'Reserve');
 });
 
 test('renders BookingForm component with input field for time', () => {

@@ -18,6 +18,14 @@
 			justify-content: space-between;
 			width: 100%;
 
+			@media screen and (max-width: 768px){
+				flex-direction: column;
+
+				> div:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+
 			.aboutSection_tile {
 				display: flex;
 				flex-direction: column;

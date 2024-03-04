@@ -10,6 +10,10 @@
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+	@media screen and (max-width: 768px) {
+		max-width: 100%;
+	}
 }
 
 .specialsTile_image {

@@ -11,6 +11,14 @@
         justify-content: space-between;
         width: 100%;
 
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+
+            > div:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
         .footer_columnTitle {
             color: $secondary-color;
             margin-bottom: 10px;

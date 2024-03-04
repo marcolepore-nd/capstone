@@ -1,15 +1,15 @@
 import React from "react";
 import Centerer from "components/Centerer/Centerer";
 
-const ConfirmedBooking = () => {
+const ComingSoon = () => {
   return (
     <main>
       <Centerer column>
-        <h3>Booking Confirmed</h3>
-        <p>Your booking has been confirmed.</p>
+        <h3>Coming soon</h3>
+        <p>This page is under construction.</p>
       </Centerer>
     </main>
   );
 };
 
-export default ConfirmedBooking;
+export default ComingSoon;

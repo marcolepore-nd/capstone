@@ -1,10 +1,8 @@
 export const navPages = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Menu', path: '/menu' },
     { name: 'Reservations', path: '/reservations' },
     { name: 'Order Online', path: '/order-online' },
-    { name: 'Login', path: '/login' },
 ]
 
 export const contacts = [
@@ -18,3 +16,5 @@ export const socialMedia = [
     { name: 'Instagram', path: 'https://www.instagram.com' },
     { name: 'Twitter', path: 'https://www.twitter.com' },
 ]
+
+export const isMobile = window.innerWidth <= 768
